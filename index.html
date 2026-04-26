@@ -3,151 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wendy's Stealth Health Recipe Box</title>
+    <title>Wendy's Recipe Box</title>
     <style>
-        body { font-family: -apple-system, sans-serif; line-height: 1.6; max-width: 800px; margin: 40px auto; padding: 20px; background: #f4f4f9; color: #333; }
-        section { background: white; padding: 25px; border-radius: 12px; margin-bottom: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        body { font-family: -apple-system, sans-serif; line-height: 1.6; max-width: 600px; margin: 40px auto; padding: 20px; background: #f4f4f9; color: #333; }
+        .selector-box { background: #2c3e50; color: white; padding: 20px; border-radius: 12px; text-align: center; }
+        .selector-box a { color: #f39c12; display: block; margin: 12px 0; text-decoration: none; font-weight: bold; border: 1px solid #f39c12; padding: 10px; border-radius: 8px; }
+        section { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .macros { font-weight: bold; color: #7f8c8d; background: #eee; padding: 5px 10px; border-radius: 4px; }
         .hidden { display: none; }
-        .selector-box { background: #2c3e50; color: white; padding: 20px; border-radius: 12px; margin-bottom: 30px; text-align: center; }
-        .selector-box a { color: #f39c12; display: block; margin: 10px 0; text-decoration: none; font-weight: bold; }
-        h2 { color: #d35400; }
-        .macros { font-weight: bold; color: #7f8c8d; }
     </style>
 </head>
 <body>
 
     <div id="selector" class="selector-box">
-        <h1>Select Recipe to Import</h1>
-        <p>Click a recipe below, then use the AnyList Share extension on that page.</p>
+        <h1>Select to Import</h1>
         <a href="?id=lasagna">1. Lasagna Bowls</a>
-        <a href="?id=carnitas">2. Carnitas Pulled Pork Burritos</a>
+        <a href="?id=carnitas">2. Carnitas Burritos</a>
         <a href="?id=onion-beef">3. Caramelized Onion Beef Burritos</a>
         <a href="?id=bbq-beef">4. BBQ Beef Loaded Sweet Potatoes</a>
         <a href="?id=cheesesteak">5. Cheesesteak Pasta</a>
         <a href="?id=queso-chicken">6. Queso Chicken & Rice</a>
-        <a href="?id=breakfast-brisket">7. Chipotle Brisket Breakfast Burritos</a>
-        <a href="?id=fajita-burrito">8. Creamy Chicken Fajita Burritos</a>
+        <a href="?id=breakfast-brisket">7. Brisket Breakfast Burritos</a>
+        <a href="?id=fajita-burrito">8. Creamy Fajita Burritos</a>
         <a href="?id=pizza-bites">9. Pepperoni Pizza Bagel Bites</a>
         <a href="?id=burrito-bowls">10. Chicken Burrito Bowls</a>
-        <hr>
-        <a href="index.html" style="color: white; font-size: 0.8em;">Show All Recipes</a>
     </div>
 
-    <div id="lasagna" class="recipe-content">
-        <script type="application/ld+json">
-        { "@context": "https://schema.org/", "@type": "Recipe", "name": "Lasagna Bowls", "recipeYield": "10", "nutrition": { "@type": "NutritionInformation", "calories": "480 kcal", "proteinContent": "44g", "carbohydrateContent": "48g", "fatContent": "14g" }, "recipeIngredient": ["907g 93% lean ground beef", "30g tomato paste", "840g crushed tomatoes", "960g bone broth", "1 tbsp onion powder", "1 tbsp garlic powder", "1 tbsp Italian herbs", "1.5 tbsp salt", "1 tsp black pepper", "120g fat-free milk", "200g blended 2% cottage cheese", "120g Parmigiano Reggiano", "60g low-fat mozzarella", "448g oven-ready lasagna sheets", "240g water", "30g low-fat ricotta", "Fresh basil"], "recipeInstructions": [{"@type": "HowToStep", "text": "Cook beef, tomato paste, tomatoes, and broth for 3-4 hours."}, {"@type": "HowToStep", "text": "Add broken lasagna sheets and water; cook 20-30 mins."}, {"@type": "HowToStep", "text": "Stir in cottage cheese, parmesan, mozzarella, and milk."}] }
-        </script>
-        <section>
-            <h2>Lasagna Bowls</h2>
-            <p class="macros">480 Cal | 44g P | 48g C | 14g F</p>
-        </section>
-    </div>
+    <div id="recipes-container">
+        
+        <div id="lasagna" class="recipe-entry" data-name="Lasagna Bowls">
+            <script type="application/ld+json">
+            { "@context": "https://schema.org/", "@type": "Recipe", "name": "Lasagna Bowls", "recipeYield": "10", "nutrition": { "@type": "NutritionInformation", "calories": "480 kcal", "proteinContent": "44g" }, "recipeIngredient": ["907g ground beef", "30g tomato paste", "840g crushed tomatoes", "960g bone broth", "Seasonings", "448g lasagna sheets", "Cheese blend"], "recipeInstructions": [{"@type": "HowToStep", "text": "Cook beef and sauce for 3-4 hours."}, {"@type": "HowToStep", "text": "Add noodles and water for 20 mins."}, {"@type": "HowToStep", "text": "Stir in cheeses and milk."}] }
+            </script>
+            <section><h2>Lasagna Bowls</h2><p class="macros">480 Cal | 44g P</p></section>
+        </div>
 
-    <div id="carnitas" class="recipe-content">
-        <script type="application/ld+json">
-        { "@context": "https://schema.org/", "@type": "Recipe", "name": "Carnitas Inspired Pulled Pork Burritos", "recipeYield": "15", "nutrition": { "@type": "NutritionInformation", "calories": "510 kcal", "proteinContent": "35g", "carbohydrateContent": "53g", "fatContent": "17g" }, "recipeIngredient": ["1790g pork loin", "2 onions", "1 tbsp oil", "2 tbsp salt", "1 tbsp oregano", "2 tsp pepper", "1 tsp cumin", "Juice of 2 oranges", "6 cloves garlic", "15g apple cider vinegar", "3 bay leaves", "40g honey", "320g jasmine rice", "745g bone broth", "15 tortillas", "30g Greek yogurt"], "recipeInstructions": [{"@type": "HowToStep", "text": "Sauté onions. Slow cook pork with onions, spices, juice, garlic, honey, and vinegar (4-5 hrs High)."}, {"@type": "HowToStep", "text": "Shred pork and reduce liquid. Cook rice in bone broth."}, {"@type": "HowToStep", "text": "Assemble burritos with rice, pork, and yogurt."}] }
-        </script>
-        <section>
-            <h2>Carnitas Inspired Pulled Pork Burritos</h2>
-            <p class="macros">510 Cal | 35g P | 53g C | 17g F</p>
-        </section>
-    </div>
+        <div id="carnitas" class="recipe-entry" data-name="Carnitas Burritos">
+            <script type="application/ld+json">
+            { "@context": "https://schema.org/", "@type": "Recipe", "name": "Carnitas Burritos", "recipeYield": "15", "nutrition": { "@type": "NutritionInformation", "calories": "510 kcal", "proteinContent": "35g" }, "recipeIngredient": ["1790g pork loin", "2 onions", "Orange juice", "Honey", "Spices", "Rice", "Tortillas"], "recipeInstructions": [{"@type": "HowToStep", "text": "Slow cook pork and onions until tender."}, {"@type": "HowToStep", "text": "Shred and reduce liquid."}, {"@type": "HowToStep", "text": "Assemble with rice and yogurt."}] }
+            </script>
+            <section><h2>Carnitas Burritos</h2><p class="macros">510 Cal | 35g P</p></section>
+        </div>
 
-    <div id="onion-beef" class="recipe-content">
-        <script type="application/ld+json">
-        { "@context": "https://schema.org/", "@type": "Recipe", "name": "Caramelized Onion Beef Burritos", "recipeYield": "11", "nutrition": { "@type": "NutritionInformation", "calories": "535 kcal", "proteinContent": "42g", "carbohydrateContent": "54g", "fatContent": "16g" }, "recipeIngredient": ["1340g brisket", "45g Worcestershire", "15g Dijon mustard", "1 tbsp salt", "1 tbsp garlic powder", "2 tsp onion powder", "2 tsp black pepper", "1 tsp dried thyme", "1/8 tsp nutmeg", "100g bone broth", "4 yellow onions", "30g butter", "240g rice", "300g 0% Greek yogurt", "60g cheddar", "11 tortillas"], "recipeInstructions": [{"@type": "HowToStep", "text": "Slow cook beef with seasonings and broth until tender."}, {"@type": "HowToStep", "text": "Sauté onions in butter for 15 mins. Mix cooked rice with yogurt and cheddar."}, {"@type": "HowToStep", "text": "Shred beef, mix with onions, and assemble in tortillas with cheesy rice."}] }
-        </script>
-        <section>
-            <h2>Caramelized Onion Beef Burritos</h2>
-            <p class="macros">535 Cal | 42g P | 54g C | 16g F</p>
-        </section>
-    </div>
+        <div id="onion-beef" class="recipe-entry" data-name="Caramelized Onion Beef Burritos">
+            <script type="application/ld+json">
+            { "@context": "https://schema.org/", "@type": "Recipe", "name": "Caramelized Onion Beef Burritos", "recipeYield": "11", "nutrition": { "@type": "NutritionInformation", "calories": "535 kcal", "proteinContent": "42g" }, "recipeIngredient": ["1340g brisket", "Onions", "Butter", "Rice", "Greek yogurt", "Cheddar", "Tortillas"], "recipeInstructions": [{"@type": "HowToStep", "text": "Slow cook beef until tender."}, {"@type": "HowToStep", "text": "Caramelize onions and prep cheesy rice."}, {"@type": "HowToStep", "text": "Assemble burritos."}] }
+            </script>
+            <section><h2>Caramelized Onion Beef Burritos</h2><p class="macros">535 Cal | 42g P</p></section>
+        </div>
 
-    <div id="bbq-beef" class="recipe-content">
-        <script type="application/ld+json">
-        { "@context": "https://schema.org/", "@type": "Recipe", "name": "BBQ Beef Loaded Sweet Potatoes", "recipeYield": "10", "nutrition": { "@type": "NutritionInformation", "calories": "555 kcal", "proteinContent": "51g", "carbohydrateContent": "52g", "fatContent": "17g" }, "recipeIngredient": ["1790g brisket", "300g Dr Pepper", "24g BBQ seasoning", "15ml Worcestershire", "30g no-sugar ketchup", "3 chipotle peppers", "2000g sweet potatoes", "200g cheddar", "400g Greek yogurt"], "recipeInstructions": [{"@type": "HowToStep", "text": "Slow cook beef with Dr Pepper and seasonings until tender."}, {"@type": "HowToStep", "text": "Roast diced sweet potatoes at 400°F for 30 mins."}, {"@type": "HowToStep", "text": "Top potatoes with shredded beef, cheese, and yogurt."}] }
-        </script>
-        <section>
-            <h2>BBQ Beef Loaded Sweet Potatoes</h2>
-            <p class="macros">555 Cal | 51g P | 52g C | 17g F</p>
-        </section>
-    </div>
+        <div id="bbq-beef" class="recipe-entry" data-name="BBQ Beef Loaded Sweet Potatoes">
+            <script type="application/ld+json">
+            { "@context": "https://schema.org/", "@type": "Recipe", "name": "BBQ Beef Loaded Sweet Potatoes", "recipeYield": "10", "nutrition": { "@type": "NutritionInformation", "calories": "555 kcal", "proteinContent": "51g" }, "recipeIngredient": ["1790g brisket", "Dr Pepper", "BBQ spice", "Sweet potatoes", "Cheese", "Yogurt"], "recipeInstructions": [{"@type": "HowToStep", "text": "Slow cook beef with Dr Pepper."}, {"@type": "HowToStep", "text": "Roast sweet potatoes."}, {"@type": "HowToStep", "text": "Top potatoes with beef and cheese."}] }
+            </script>
+            <section><h2>BBQ Beef Sweet Potatoes</h2><p class="macros">555 Cal | 51g P</p></section>
+        </div>
 
-    <div id="cheesesteak" class="recipe-content">
-        <script type="application/ld+json">
-        { "@context": "https://schema.org/", "@type": "Recipe", "name": "Cheesesteak Pasta", "recipeYield": "12", "nutrition": { "@type": "NutritionInformation", "calories": "520 kcal", "proteinContent": "48g", "carbohydrateContent": "49g", "fatContent": "15g" }, "recipeIngredient": ["1350g brisket", "1 tbsp salt/pepper/garlic/onion powder", "240g bone broth", "4 red peppers", "4 poblanos", "4 jalapenos", "2 sweet onions", "800g 2% cottage cheese", "100g parmigiano", "150g provolone", "350ml 1% milk", "672g pasta"], "recipeInstructions": [{"@type": "HowToStep", "text": "Slow cook beef with seasonings and broth."}, {"@type": "HowToStep", "text": "Roast sliced peppers and onions at 450°F."}, {"@type": "HowToStep", "text": "Blend cheeses and milk; mix with cooked pasta and beef; cook on low for 20 mins."}] }
-        </script>
-        <section>
-            <h2>Cheesesteak Pasta</h2>
-            <p class="macros">520 Cal | 48g P | 49g C | 15g F</p>
-        </section>
-    </div>
+        <div id="cheesesteak" class="recipe-entry" data-name="Cheesesteak Pasta">
+            <script type="application/ld+json">
+            { "@context": "https://schema.org/", "@type": "Recipe", "name": "Cheesesteak Pasta", "recipeYield": "12", "nutrition": { "@type": "NutritionInformation", "calories": "520 kcal", "proteinContent": "48g" }, "recipeIngredient": ["1350g brisket", "Peppers", "Onions", "Cottage cheese", "Provolone", "Pasta"], "recipeInstructions": [{"@type": "HowToStep", "text": "Slow cook beef and roast peppers."}, {"@type": "HowToStep", "text": "Blend cheese sauce."}, {"@type": "HowToStep", "text": "Combine all and cook 20 mins."}] }
+            </script>
+            <section><h2>Cheesesteak Pasta</h2><p class="macros">520 Cal | 48g P</p></section>
+        </div>
 
-    <div id="queso-chicken" class="recipe-content">
-        <script type="application/ld+json">
-        { "@context": "https://schema.org/", "@type": "Recipe", "name": "Queso Chicken & Rice", "recipeYield": "5", "nutrition": { "@type": "NutritionInformation", "calories": "515 kcal", "proteinContent": "48g", "carbohydrateContent": "51g", "fatContent": "13g" }, "recipeIngredient": ["24oz chicken breast", "1.5 packets taco seasoning", "300g basmati rice", "250g 2% Greek yogurt", "85g red enchilada sauce", "85g cheddar cheese", "100g 1/3 fat cream cheese", "65g diced green chiles"], "recipeInstructions": [{"@type": "HowToStep", "text": "Cook rice for 15 mins. Air fry seasoned chicken at 375°F for 12 mins."}, {"@type": "HowToStep", "text": "Melt yogurt, enchilada sauce, and cheeses in a pan."}, {"@type": "HowToStep", "text": "Serve chicken over rice topped with queso sauce."}] }
-        </script>
-        <section>
-            <h2>Queso Chicken & Rice</h2>
-            <p class="macros">515 Cal | 48g P | 51g C | 13g F</p>
-        </section>
-    </div>
+        <div id="queso-chicken" class="recipe-entry" data-name="Queso Chicken & Rice">
+            <script type="application/ld+json">
+            { "@context": "https://schema.org/", "@type": "Recipe", "name": "Queso Chicken & Rice", "recipeYield": "5", "nutrition": { "@type": "NutritionInformation", "calories": "515 kcal", "proteinContent": "48g" }, "recipeIngredient": ["Chicken breast", "Taco seasoning", "Rice", "Greek yogurt", "Enchilada sauce", "Cheeses"], "recipeInstructions": [{"@type": "HowToStep", "text": "Cook rice and air fry chicken."}, {"@type": "HowToStep", "text": "Make queso sauce in pan."}, {"@type": "HowToStep", "text": "Combine and serve."}] }
+            </script>
+            <section><h2>Queso Chicken & Rice</h2><p class="macros">515 Cal | 48g P</p></section>
+        </div>
 
-    <div id="breakfast-brisket" class="recipe-content">
-        <script type="application/ld+json">
-        { "@context": "https://schema.org/", "@type": "Recipe", "name": "Chipotle Brisket Breakfast Burritos", "recipeYield": "12", "nutrition": { "@type": "NutritionInformation", "calories": "505 kcal", "proteinContent": "48g", "carbohydrateContent": "40g", "fatContent": "17g" }, "recipeIngredient": ["1340g brisket", "200g chipotles", "200g red enchilada sauce", "40g honey", "600g egg whites", "5 whole eggs", "350g cottage cheese", "100g cheddar", "400g Greek yogurt", "12 tortillas"], "recipeInstructions": [{"@type": "HowToStep", "text": "Slow cook brisket with chipotles and sauce until tender."}, {"@type": "HowToStep", "text": "Blend and bake eggs with cottage cheese for 25 mins."}, {"@type": "HowToStep", "text": "Assemble tortillas with yogurt sauce, baked egg, and beef."}] }
-        </script>
-        <section>
-            <h2>Chipotle Brisket Breakfast Burritos</h2>
-            <p class="macros">505 Cal | 48g P | 40g C | 17g F</p>
-        </section>
-    </div>
+        <div id="breakfast-brisket" class="recipe-entry" data-name="Chipotle Brisket Breakfast Burritos">
+            <script type="application/ld+json">
+            { "@context": "https://schema.org/", "@type": "Recipe", "name": "Chipotle Brisket Breakfast Burritos", "recipeYield": "12", "nutrition": { "@type": "NutritionInformation", "calories": "505 kcal", "proteinContent": "48g" }, "recipeIngredient": ["Brisket", "Chipotes", "Eggs", "Cottage cheese", "Tortillas"], "recipeInstructions": [{"@type": "HowToStep", "text": "Slow cook beef."}, {"@type": "HowToStep", "text": "Bake egg/cheese sheets."}, {"@type": "HowToStep", "text": "Assemble and freeze burritos."}] }
+            </script>
+            <section><h2>Brisket Breakfast Burritos</h2><p class="macros">505 Cal | 48g P</p></section>
+        </div>
 
-    <div id="fajita-burrito" class="recipe-content">
-        <script type="application/ld+json">
-        { "@context": "https://schema.org/", "@type": "Recipe", "name": "Creamy Chicken Fajita Burrito", "recipeYield": "10", "nutrition": { "@type": "NutritionInformation", "calories": "390 kcal", "proteinContent": "36g", "carbohydrateContent": "34g", "fatContent": "12g" }, "recipeIngredient": ["32oz chicken", "1/2 bunch cilantro", "1 tbsp avocado oil", "1 tbsp honey", "4 bell peppers", "1 onion", "220g Greek yogurt", "100g mozzarella", "300g refried beans", "10 tortillas"], "recipeInstructions": [{"@type": "HowToStep", "text": "Marinate chicken. Roast peppers and onions at 400°F for 40 mins."}, {"@type": "HowToStep", "text": "Air fry chicken at 385°F for 9 mins."}, {"@type": "HowToStep", "text": "Assemble with beans, chicken/veggie mix, and cheese."}] }
-        </script>
-        <section>
-            <h2>Creamy Chicken Fajita Burrito</h2>
-            <p class="macros">390 Cal | 36g P | 34g C | 12g F</p>
-        </section>
-    </div>
+        <div id="fajita-burrito" class="recipe-entry" data-name="Creamy Chicken Fajita Burrito">
+            <script type="application/ld+json">
+            { "@context": "https://schema.org/", "@type": "Recipe", "name": "Creamy Chicken Fajita Burrito", "recipeYield": "10", "nutrition": { "@type": "NutritionInformation", "calories": "390 kcal", "proteinContent": "36g" }, "recipeIngredient": ["Chicken", "Peppers", "Onion", "Beans", "Yogurt", "Tortillas"], "recipeInstructions": [{"@type": "HowToStep", "text": "Roast peppers and air fry chicken."}, {"@type": "HowToStep", "text": "Assemble with beans and yogurt."}] }
+            </script>
+            <section><h2>Fajita Burrito</h2><p class="macros">390 Cal | 36g P</p></section>
+        </div>
 
-    <div id="pizza-bites" class="recipe-content">
-        <script type="application/ld+json">
-        { "@context": "https://schema.org/", "@type": "Recipe", "name": "Pepperoni Pizza Bagel Bites", "recipeYield": "5", "nutrition": { "@type": "NutritionInformation", "calories": "515 kcal", "proteinContent": "30g", "carbohydrateContent": "65g", "fatContent": "17g" }, "recipeIngredient": ["10 English muffins", "400g marinara", "200g mozzarella", "60 slices turkey pepperoni", "33g hot honey"], "recipeInstructions": [{"@type": "HowToStep", "text": "Bake muffin halves at 450°F for 5 mins."}, {"@type": "HowToStep", "text": "Add sauce, cheese, and pepperoni; bake 5 more mins."}, {"@type": "HowToStep", "text": "Drizzle with hot honey."}] }
-        </script>
-        <section>
-            <h2>Pepperoni Pizza Bagel Bites</h2>
-            <p class="macros">515 Cal | 30g P | 65g C | 17g F</p>
-        </section>
-    </div>
+        <div id="pizza-bites" class="recipe-entry" data-name="Pepperoni Pizza Bagel Bites">
+            <script type="application/ld+json">
+            { "@context": "https://schema.org/", "@type": "Recipe", "name": "Pepperoni Pizza Bagel Bites", "recipeYield": "5", "nutrition": { "@type": "NutritionInformation", "calories": "515 kcal", "proteinContent": "30g" }, "recipeIngredient": ["English muffins", "Marinara", "Mozzarella", "Turkey pepperoni", "Hot honey"], "recipeInstructions": [{"@type": "HowToStep", "text": "Toast muffins, add toppings, and bake 5 mins."}] }
+            </script>
+            <section><h2>Pizza Bagel Bites</h2><p class="macros">515 Cal | 30g P</p></section>
+        </div>
 
-    <div id="burrito-bowls" class="recipe-content">
-        <script type="application/ld+json">
-        { "@context": "https://schema.org/", "@type": "Recipe", "name": "Chicken Burrito Bowls", "recipeYield": "5", "nutrition": { "@type": "NutritionInformation", "calories": "505 kcal", "proteinContent": "45g", "carbohydrateContent": "44g", "fatContent": "16g" }, "recipeIngredient": ["24oz chicken thighs", "300g RightRice", "200g avocado", "50g green enchilada sauce", "200g Greek yogurt", "5 tomatoes", "1 onion", "2 jalapenos"], "recipeInstructions": [{"@type": "HowToStep", "text": "Air fry chicken at 375°F for 15 mins. Cook rice."}, {"@type": "HowToStep", "text": "Make pico and guacamole."}, {"@type": "HowToStep", "text": "Assemble bowls and top with yogurt."}] }
-        </script>
-        <section>
-            <h2>Chicken Burrito Bowls</h2>
-            <p class="macros">505 Cal | 45g P | 44g C | 16g F</p>
-        </section>
+        <div id="burrito-bowls" class="recipe-entry" data-name="Chicken Burrito Bowls">
+            <script type="application/ld+json">
+            { "@context": "https://schema.org/", "@type": "Recipe", "name": "Chicken Burrito Bowls", "recipeYield": "5", "nutrition": { "@type": "NutritionInformation", "calories": "505 kcal", "proteinContent": "45g" }, "recipeIngredient": ["Chicken thighs", "RightRice", "Avocado", "Pico de gallo", "Yogurt"], "recipeInstructions": [{"@type": "HowToStep", "text": "Air fry chicken and cook rice."}, {"@type": "HowToStep", "text": "Assemble with guac and pico."}] }
+            </script>
+            <section><h2>Chicken Burrito Bowls</h2><p class="macros">505 Cal | 45g P</p></section>
+        </div>
+
     </div>
 
     <script>
         const urlParams = new URLSearchParams(window.location.search);
-        const recipeId = urlParams.get('id');
+        const selectedId = urlParams.get('id');
+        const container = document.getElementById('recipes-container');
+        const selector = document.getElementById('selector');
 
-        if (recipeId) {
-            // Hide everything
-            document.getElementById('selector').classList.add('hidden');
-            const allRecipes = document.querySelectorAll('.recipe-content');
-            allRecipes.forEach(el => el.classList.add('hidden'));
-
-            // Show only the selected one
-            const selected = document.getElementById(recipeId);
-            if (selected) {
-                selected.classList.remove('hidden');
+        if (selectedId) {
+            // Find the chosen recipe
+            const chosen = document.getElementById(selectedId);
+            
+            if (chosen) {
+                // Hide the main menu
+                selector.classList.add('hidden');
+                
+                // CRITICAL: Physically remove all other recipes from the DOM
+                const allEntries = document.querySelectorAll('.recipe-entry');
+                allEntries.forEach(entry => {
+                    if (entry.id !== selectedId) {
+                        entry.remove(); // This deletes it from the code so AnyList can't find it
+                    }
+                });
             }
+        } else {
+            // If no ID is selected, hide all recipes so the scraper sees nothing until you pick one
+            container.classList.add('hidden');
         }
     </script>
 
