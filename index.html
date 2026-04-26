@@ -3,102 +3,472 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wendy's Recipe Box</title>
+    <title>Wendy's Stealth Health Recipe Box</title>
     <style>
-        body { font-family: -apple-system, sans-serif; line-height: 1.6; max-width: 600px; margin: 40px auto; padding: 20px; background: #f4f4f9; color: #333; }
-        .selector-box { background: #2c3e50; color: white; padding: 20px; border-radius: 12px; text-align: center; }
-        .selector-box a { color: #f39c12; display: block; margin: 12px 0; text-decoration: none; font-weight: bold; border: 1px solid #f39c12; padding: 10px; border-radius: 8px; }
-        section { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-        .macros { font-weight: bold; color: #7f8c8d; background: #eee; padding: 5px 10px; border-radius: 4px; }
+        body { font-family: -apple-system, sans-serif; line-height: 1.6; max-width: 800px; margin: 40px auto; padding: 20px; background: #f4f4f9; color: #333; }
+        .selector-box { background: #2c3e50; color: white; padding: 25px; border-radius: 12px; text-align: center; margin-bottom: 30px; }
+        .selector-box a { color: #f39c12; display: block; margin: 12px 0; text-decoration: none; font-weight: bold; border: 1px solid #f39c12; padding: 12px; border-radius: 8px; transition: 0.3s; }
+        .selector-box a:hover { background: #f39c12; color: #2c3e50; }
+        section { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        h2 { color: #d35400; margin-top: 0; }
+        .macros { font-weight: bold; color: #7f8c8d; background: #eee; padding: 10px; border-radius: 6px; display: inline-block; margin-bottom: 20px; }
         .hidden { display: none; }
+        h3 { border-bottom: 1px solid #eee; padding-bottom: 5px; margin-top: 25px; }
+        ul, ol { padding-left: 20px; }
+        li { margin-bottom: 10px; }
     </style>
 </head>
 <body>
 
     <div id="selector" class="selector-box">
-        <h1>Select to Import</h1>
+        <h1>Recipe Import Portal</h1>
+        <p>Select a recipe, then use the AnyList Share extension.</p>
         <a href="?id=lasagna">1. Lasagna Bowls</a>
-        <a href="?id=carnitas">2. Carnitas Burritos</a>
+        <a href="?id=carnitas">2. Carnitas Inspired Pulled Pork Burritos</a>
         <a href="?id=onion-beef">3. Caramelized Onion Beef Burritos</a>
         <a href="?id=bbq-beef">4. BBQ Beef Loaded Sweet Potatoes</a>
         <a href="?id=cheesesteak">5. Cheesesteak Pasta</a>
         <a href="?id=queso-chicken">6. Queso Chicken & Rice</a>
-        <a href="?id=breakfast-brisket">7. Brisket Breakfast Burritos</a>
-        <a href="?id=fajita-burrito">8. Creamy Fajita Burritos</a>
+        <a href="?id=breakfast-brisket">7. Chipotle Brisket Breakfast Burritos</a>
+        <a href="?id=fajita-burrito">8. Creamy Chicken Fajita Burritos</a>
         <a href="?id=pizza-bites">9. Pepperoni Pizza Bagel Bites</a>
         <a href="?id=burrito-bowls">10. Chicken Burrito Bowls</a>
     </div>
 
     <div id="recipes-container">
         
-        <div id="lasagna" class="recipe-entry" data-name="Lasagna Bowls">
+        <div id="lasagna" class="recipe-entry">
             <script type="application/ld+json">
-            { "@context": "https://schema.org/", "@type": "Recipe", "name": "Lasagna Bowls", "recipeYield": "10", "nutrition": { "@type": "NutritionInformation", "calories": "480 kcal", "proteinContent": "44g" }, "recipeIngredient": ["907g ground beef", "30g tomato paste", "840g crushed tomatoes", "960g bone broth", "Seasonings", "448g lasagna sheets", "Cheese blend"], "recipeInstructions": [{"@type": "HowToStep", "text": "Cook beef and sauce for 3-4 hours."}, {"@type": "HowToStep", "text": "Add noodles and water for 20 mins."}, {"@type": "HowToStep", "text": "Stir in cheeses and milk."}] }
+            {
+              "@context": "https://schema.org/",
+              "@type": "Recipe",
+              "name": "Lasagna Bowls",
+              "recipeYield": "10",
+              "nutrition": { "@type": "NutritionInformation", "calories": "480 kcal", "proteinContent": "44g", "carbohydrateContent": "48g", "fatContent": "14g" },
+              "recipeIngredient": [
+                "907g (32oz) 93% lean ground beef", "30g (2 Tbsp) tomato paste", "840g (54 oz) crushed tomatoes (two 28 oz cans)", "960g (32oz) bone broth (two 16oz boxes)", "1 Tbsp onion powder", "1 Tbsp garlic powder", "1.5 Tbsp salt", "1 Tbsp Italian herbs", "1 tsp black pepper", "120g (½ cup) fat-free milk", "200g blended 2% cottage cheese", "120g (1 cup) Parmigiano Reggiano", "60g (½ cup) low-fat mozzarella", "448g (16 oz) oven-ready lasagna", "240g (1 cup) water", "30g (2 Tbsp) low-fat ricotta (per bowl)", "Chopped fresh basil"
+              ],
+              "recipeInstructions": [
+                { "@type": "HowToStep", "text": "Add the ground beef to the slow cooker. Add in the tomato paste, crushed tomatoes, bone broth, onion powder, garlic powder, salt, Italian herbs, and black pepper. Stir well, breaking up any large chunks of beef, until everything is fully combined. Cover and cook on high for 3-4 hours or low for 4+ hours until the beef is tender and flavors are fully melded." },
+                { "@type": "HowToStep", "text": "Once done, break up the oven ready lasagna sheets and add them to the slow cooker. Pour in 1 cup of water and mix thoroughly to ensure all pasta pieces are separated and submerged in the sauce. Cover and cook for an additional 20-30 minutes on high, or until the pasta is cooked through." },
+                { "@type": "HowToStep", "text": "When the pasta is tender, blend the 2% cottage cheese, shred the Parmigiano Reggiano and low-fat mozzarella. Add to the slow cooker with the fat-free milk. Stir until the cheese is melted and fully combined, creating a creamy sauce." },
+                { "@type": "HowToStep", "text": "Let the mixture sit, covered, for another 10 minutes to thicken slightly. Chop the basil and serve each portion with a topping of low-fat ricotta and basil." }
+              ]
+            }
             </script>
-            <section><h2>Lasagna Bowls</h2><p class="macros">480 Cal | 44g P</p></section>
+            <section>
+                <h2>Lasagna Bowls</h2>
+                <div class="macros">480 Cal | 44g Protein | 48g Carbs | 14g Fat</div>
+                <h3>Ingredients</h3>
+                <ul>
+                    <li>907g (32oz) 93% lean ground beef</li>
+                    <li>30g (2 Tbsp) tomato paste</li>
+                    <li>840g (54 oz) crushed tomatoes (two 28 oz cans)</li>
+                    <li>960g (32oz) bone broth (two 16oz boxes)</li>
+                    <li>1 Tbsp onion powder, 1 Tbsp garlic powder, 1.5 Tbsp salt, 1 Tbsp Italian herbs, 1 tsp black pepper</li>
+                    <li>120g (½ cup) fat-free milk</li>
+                    <li>200g blended 2% cottage cheese</li>
+                    <li>120g (1 cup) Parmigiano Reggiano</li>
+                    <li>60g (½ cup) low-fat mozzarella</li>
+                    <li>448g (16 oz) oven-ready lasagna</li>
+                    <li>240g (1 cup) water</li>
+                    <li>Toppings: 30g low-fat ricotta per bowl, fresh basil</li>
+                </ul>
+                <h3>Instructions</h3>
+                <ol>
+                    <li>Add the ground beef to the slow cooker. Add in the tomato paste, crushed tomatoes, bone broth, onion powder, garlic powder, salt, Italian herbs, and black pepper. Stir well, breaking up any large chunks of beef, until everything is fully combined. Cover and cook on high for 3-4 hours or low for 4+ hours until the beef is tender and flavors are fully melded.</li>
+                    <li>Once done, break up the oven ready lasagna sheets and add them to the slow cooker. Pour in 1 cup of water and mix thoroughly to ensure all pasta pieces are separated and submerged in the sauce. Cover and cook for an additional 20-30 minutes on high, or until the pasta is cooked through.</li>
+                    <li>When the pasta is tender, blend the 2% cottage cheese, shred the Parmigiano Reggiano and low-fat mozzarella. Add to the slow cooker with the fat-free milk. Stir until the cheese is melted and fully combined, creating a creamy sauce.</li>
+                    <li>Let the mixture sit, covered, for another 10 minutes to thicken slightly. Chop the basil and serve each portion with a topping of low-fat ricotta and basil.</li>
+                </ol>
+            </section>
         </div>
 
-        <div id="carnitas" class="recipe-entry" data-name="Carnitas Burritos">
+        <div id="carnitas" class="recipe-entry">
             <script type="application/ld+json">
-            { "@context": "https://schema.org/", "@type": "Recipe", "name": "Carnitas Burritos", "recipeYield": "15", "nutrition": { "@type": "NutritionInformation", "calories": "510 kcal", "proteinContent": "35g" }, "recipeIngredient": ["1790g pork loin", "2 onions", "Orange juice", "Honey", "Spices", "Rice", "Tortillas"], "recipeInstructions": [{"@type": "HowToStep", "text": "Slow cook pork and onions until tender."}, {"@type": "HowToStep", "text": "Shred and reduce liquid."}, {"@type": "HowToStep", "text": "Assemble with rice and yogurt."}] }
+            {
+              "@context": "https://schema.org/",
+              "@type": "Recipe",
+              "name": "Carnitas Inspired Pulled Pork Burritos",
+              "recipeYield": "15",
+              "nutrition": { "@type": "NutritionInformation", "calories": "510 kcal", "proteinContent": "35g", "carbohydrateContent": "53g", "fatContent": "17g" },
+              "recipeIngredient": [
+                "1790g (64 oz) pork loin", "2 onions, diced", "15g (1 Tbsp) oil of choice", "2 Tbsp salt", "1 Tbsp oregano", "2 tsp black pepper", "1 tsp cumin", "Juice from 2 oranges", "6 cloves garlic", "1/4 tsp cinnamon", "15g (1 Tbsp) apple cider vinegar", "3 bay leaves", "40g (2 Tbsp) honey", "5g (1 tsp) cornstarch + 1 tsp water (slurry)", "15g (1 Tbsp) oil", "3 cloves garlic", "30g (2 Tbsp) tomato paste", "Oregano, salt, pepper, onion powder to taste", "320g (1 1/3 cups) jasmine rice", "745g (3 cups) chicken bone broth", "15 tortillas", "30g Greek yogurt (per burrito)"
+              ],
+              "recipeInstructions": [
+                { "@type": "HowToStep", "text": "Cut the pork loin into 4-5 large chunks and set aside. Dice the onions and cook in a skillet over medium-high heat with oil until browned and caramelized, about 8-10 minutes. Stir occasionally to prevent burning." },
+                { "@type": "HowToStep", "text": "Place the pork chunks in the slow cooker. Add the caramelized onions, salt, black pepper, oregano, cumin, cinnamon, garlic cloves, honey and apple cider vinegar. Squeeze the juice from the oranges over the mixture, then place the orange peels over the meat in the slow cooker. Add the bay leaves." },
+                { "@type": "HowToStep", "text": "Cover and cook on high for 4-5 hours or low for 5-6 hours, until the pork is tender and easily shredded. Once the pork is cooked, remove all liquid from the slow cooker and transfer it to a pan. Boil the liquid over medium-high heat to reduce for 10-15 minutes or until slightly thickened. If the liquid remains too thin, add a cornstarch slurry (1 tsp cornstarch mixed with 1 tsp water at a time) to achieve the desired consistency. While the liquid reduces, shred the pork in the slow cooker. Pour the thickened liquid back over the shredded pork and mix to coat evenly." },
+                { "@type": "HowToStep", "text": "Add oil to a medium heat pot and once warm, add minced garlic and tomato paste. Fry for 3-5 minutes. Add jasmine rice, chicken bone broth, oregano, salt, pepper, and onion powder. Bring to a boil, reduce heat to low and cover for 20-25 minutes. Fluff rice once done." },
+                { "@type": "HowToStep", "text": "Divide all ingredients across 15 tortillas, top with Greek yogurt (place directly on the tortilla) and serve." }
+              ]
+            }
             </script>
-            <section><h2>Carnitas Burritos</h2><p class="macros">510 Cal | 35g P</p></section>
+            <section>
+                <h2>Carnitas Inspired Pulled Pork Burritos</h2>
+                <div class="macros">510 Cal | 35g Protein | 53g Carbs | 17g Fat</div>
+                <h3>Ingredients</h3>
+                <ul>
+                    <li>1790g (64 oz) pork loin</li>
+                    <li>2 onions, diced & 1 Tbsp oil</li>
+                    <li>2 Tbsp salt, 1 Tbsp oregano, 2 tsp black pepper, 1 tsp cumin, 1/4 tsp cinnamon</li>
+                    <li>Juice from 2 oranges + peels, 6 cloves garlic</li>
+                    <li>15g (1 Tbsp) apple cider vinegar, 3 bay leaves, 40g (2 Tbsp) honey</li>
+                    <li>Cornstarch slurry: 1 tsp cornstarch + 1 tsp water</li>
+                    <li>Rice: 320g jasmine rice, 745g bone broth, 2 Tbsp tomato paste, 1 Tbsp oil, 3 cloves garlic</li>
+                    <li>15 tortillas & 30g Greek yogurt per burrito</li>
+                </ul>
+                <h3>Instructions</h3>
+                <ol>
+                    <li>Cut the pork loin into 4-5 large chunks and set aside. Dice the onions and cook in a skillet over medium-high heat with oil until browned and caramelized (8-10 mins).</li>
+                    <li>Place pork in slow cooker. Add onions, salt, pepper, oregano, cumin, cinnamon, garlic, honey, and vinegar. Squeeze orange juice over and add peels/bay leaves.</li>
+                    <li>Cook on high 4-5 hours or low 5-6 hours. Remove liquid to a pan and boil to reduce for 10-15 mins (use slurry if needed). Shred pork and pour reduced liquid back over.</li>
+                    <li>Rice: Fry minced garlic and tomato paste in oil for 3-5 mins. Add rice, broth, and seasonings. Simmer covered for 20-25 mins.</li>
+                    <li>Assemble across 15 tortillas with rice, pork, and yogurt.</li>
+                </ol>
+            </section>
         </div>
 
-        <div id="onion-beef" class="recipe-entry" data-name="Caramelized Onion Beef Burritos">
+        <div id="onion-beef" class="recipe-entry">
             <script type="application/ld+json">
-            { "@context": "https://schema.org/", "@type": "Recipe", "name": "Caramelized Onion Beef Burritos", "recipeYield": "11", "nutrition": { "@type": "NutritionInformation", "calories": "535 kcal", "proteinContent": "42g" }, "recipeIngredient": ["1340g brisket", "Onions", "Butter", "Rice", "Greek yogurt", "Cheddar", "Tortillas"], "recipeInstructions": [{"@type": "HowToStep", "text": "Slow cook beef until tender."}, {"@type": "HowToStep", "text": "Caramelize onions and prep cheesy rice."}, {"@type": "HowToStep", "text": "Assemble burritos."}] }
+            {
+              "@context": "https://schema.org/",
+              "@type": "Recipe",
+              "name": "Caramelized Onion Beef Burritos",
+              "recipeYield": "11",
+              "nutrition": { "@type": "NutritionInformation", "calories": "535 kcal", "proteinContent": "42g", "carbohydrateContent": "54g", "fatContent": "16g" },
+              "recipeIngredient": [
+                "1340g (48oz) flat cut brisket or chuck eye roast", "45g (3 Tbsp) Worcestershire sauce", "15g (1 Tbsp) Dijon mustard", "1 Tbsp salt", "1 Tbsp garlic powder", "2 tsp onion powder", "2 tsp black pepper", "1 tsp dried thyme", "1/8 tsp nutmeg", "100g (½ cup) bone broth", "4 yellow onions, sliced", "30g (2 Tbsp) butter", "960g (32oz) beef bone broth", "30g (2 Tbsp) Worcestershire sauce", "Sprig of rosemary and thyme", "240g (1 ¼ cups) rice", "300g (1 ¼ cups) 0% Greek yogurt", "60g (½ cup) cheddar cheese", "1 tsp nutritional yeast (optional)", "Chopped cilantro or green onions", "11 burrito tortillas"
+              ],
+              "recipeInstructions": [
+                { "@type": "HowToStep", "text": "If using flat cut brisket or chuck eye roast, remove all excess separable fat. Place meat in the slow cooker. Sprinkle with Worcestershire, Dijon mustard, salt, garlic powder, onion powder, black pepper, beef bone broth, dried thyme, and nutmeg and stir until evenly mixed. Cover and cook on high for 4-5 hours or low for 5-6 hours, until the beef is tender and can be easily shredded." },
+                { "@type": "HowToStep", "text": "While the beef cooks, prep the caramelized onions. Dice the onions and heat a large skillet over high heat. Cook until translucent and starting to brown. Reduce the heat to medium, add the butter, and stir to coat the onions. Continue to sauté for 10-15 minutes, stirring frequently, until the onions are deeply browned and caramelized." },
+                { "@type": "HowToStep", "text": "Pour in the beef bone broth and Worcestershire, stirring to combine. Optionally, add a sprig of rosemary and thyme for extra flavor. Bring the mixture to a boil and cook until the liquid has fully evaporated, leaving richly flavored onions. Remove and discard the rosemary and thyme, if used." },
+                { "@type": "HowToStep", "text": "Once the beef is fully cooked, shred it directly in the slow cooker using two forks. Add the caramelized onions to the slow cooker and stir well to combine with the beef and its juices." },
+                { "@type": "HowToStep", "text": "Steam cook the rice according to package instructions. Fluff with a fork, then shred the cheddar cheese and stir in the slow cooker with the nutritional yeast (if using), 0% yogurt, chopped cilantro or green onions, and season with salt and garlic powder to taste. Mix well to create the cheesy rice." },
+                { "@type": "HowToStep", "text": "Lay out the 11 tortillas and add 1-2 spoonfuls of cheesy rice to each. Top with the shredded beef and caramelized onion mixture, then roll each tortilla tightly into a burrito." }
+              ]
+            }
             </script>
-            <section><h2>Caramelized Onion Beef Burritos</h2><p class="macros">535 Cal | 42g P</p></section>
+            <section>
+                <h2>Caramelized Onion Beef Burritos</h2>
+                <div class="macros">535 Cal | 42g Protein | 54g Carbs | 16g Fat</div>
+                <h3>Ingredients</h3>
+                <ul>
+                    <li>1340g (48oz) flat cut brisket or chuck eye roast</li>
+                    <li>45g (3 Tbsp) Worcestershire, 15g (1 Tbsp) Dijon mustard, 100g (1/2 cup) bone broth</li>
+                    <li>1 Tbsp salt, 1 Tbsp garlic powder, 2 tsp onion powder, 2 tsp black pepper, 1 tsp thyme, 1/8 tsp nutmeg</li>
+                    <li>4 yellow onions, 30g (2 Tbsp) butter, 960g (32oz) beef bone broth, 30g (2 Tbsp) Worcestershire</li>
+                    <li>240g (1 1/4 cups) rice, 300g (1 1/4 cups) 0% Greek yogurt, 60g (1/2 cup) cheddar, 1 tsp nutritional yeast</li>
+                    <li>11 tortillas, Cilantro/green onions</li>
+                </ul>
+                <h3>Instructions</h3>
+                <ol>
+                    <li>Remove excess fat from meat. Place in slow cooker with seasonings, broth, mustard, and Worcestershire. Cook high 4-5 hrs or low 5-6 hrs.</li>
+                    <li>Sauté diced onions on high until browning. Reduce to medium, add butter, and sauté 10-15 mins. Add 32oz broth and 2 Tbsp Worcestershire; boil until liquid evaporates.</li>
+                    <li>Shred beef in slow cooker. Add the caramelized onions and mix.</li>
+                    <li>Cook rice. Mix with yogurt, shredded cheddar, nutritional yeast, and cilantro/green onions. Season with salt and garlic powder.</li>
+                    <li>Assemble: Cheesy rice followed by beef/onion mix into 11 tortillas.</li>
+                </ol>
+            </section>
         </div>
 
-        <div id="bbq-beef" class="recipe-entry" data-name="BBQ Beef Loaded Sweet Potatoes">
+        <div id="bbq-beef" class="recipe-entry">
             <script type="application/ld+json">
-            { "@context": "https://schema.org/", "@type": "Recipe", "name": "BBQ Beef Loaded Sweet Potatoes", "recipeYield": "10", "nutrition": { "@type": "NutritionInformation", "calories": "555 kcal", "proteinContent": "51g" }, "recipeIngredient": ["1790g brisket", "Dr Pepper", "BBQ spice", "Sweet potatoes", "Cheese", "Yogurt"], "recipeInstructions": [{"@type": "HowToStep", "text": "Slow cook beef with Dr Pepper."}, {"@type": "HowToStep", "text": "Roast sweet potatoes."}, {"@type": "HowToStep", "text": "Top potatoes with beef and cheese."}] }
+            {
+              "@context": "https://schema.org/",
+              "@type": "Recipe",
+              "name": "BBQ Beef Loaded Sweet Potatoes",
+              "recipeYield": "10",
+              "nutrition": { "@type": "NutritionInformation", "calories": "555 kcal", "proteinContent": "51g", "carbohydrateContent": "52g", "fatContent": "17g" },
+              "recipeIngredient": [
+                "1790g (64oz) flat cut brisket or chuck eye roast", "300g (1 ¼ cups) Dr Pepper", "24g (3 Tbsp) BBQ seasoning", "15ml (1 Tbsp) Worcestershire sauce", "30g (2 Tbsp) no-sugar-added ketchup", "3 chipotle peppers", "200g (2 cups) cheddar cheese", "400g (1 ½ cups) 0% Greek yogurt", "15g (1 Tbsp) corn starch + 15g water", "40g (2 Tbsp) honey", "25g (1 ½ Tbsp) apple cider vinegar", "10g (2 tsp) Dijon mustard", "30g (2 Tbsp) ketchup", "120g (½ cup) Dr Pepper", "2000g (~10 medium) sweet potatoes", "Olive oil, salt", "Green onions"
+              ],
+              "recipeInstructions": [
+                { "@type": "HowToStep", "text": "If using flat-cut brisket or chuck eye roast, remove all excess separable fat, and add to the slow cooker. Mince the chipotle peppers and add to the slow cooker along with the BBQ seasoning, Worcestershire sauce, no-sugar-added ketchup, and the Dr Pepper. Stir to coat the beef evenly in the mixture. Cover and cook on high for 4-5 hours or low for 6-8 hours, until the beef is tender and easily shredded." },
+                { "@type": "HowToStep", "text": "While the beef cooks, prepare the finishing sauce. In a small bowl, combine honey, apple cider vinegar, Dijon mustard, ketchup, and Dr Pepper. Mix well and set aside." },
+                { "@type": "HowToStep", "text": "Preheat the oven to 400°F (200°C). Wash and peel (optional) the sweet potatoes, then dice them into bite-sized chunks. Spread the pieces evenly on a baking sheet lined with parchment paper. Drizzle with olive oil, sprinkle with salt, and toss to coat. Roast for 25-35 minutes, flipping halfway, until tender and slightly browned." },
+                { "@type": "HowToStep", "text": "Once the beef is done, shred in the slow cooker. Transfer the liquid from the slow cooker to a pan over medium-high heat. Stir in the finishing sauce and simmer for 10 minutes to reduce slightly. If the sauce is too thin, create a cornstarch slurry and gradually stir in until desired thickness is reached." },
+                { "@type": "HowToStep", "text": "Prepare the Greek yogurt topping by mixing 0% Greek yogurt with a splash of 1% milk and garlic powder to taste." },
+                { "@type": "HowToStep", "text": "Portion into 10 servings. Top the sweet potatoes with a portion of the BBQ beef, shredded cheddar cheese, Greek yogurt mixture, and chopped green onions." }
+              ]
+            }
             </script>
-            <section><h2>BBQ Beef Sweet Potatoes</h2><p class="macros">555 Cal | 51g P</p></section>
+            <section>
+                <h2>BBQ Beef Loaded Sweet Potatoes</h2>
+                <div class="macros">555 Cal | 51g Protein | 52g Carbs | 17g Fat</div>
+                <h3>Ingredients</h3>
+                <ul>
+                    <li>1790g (64oz) flat cut brisket or chuck eye roast</li>
+                    <li>300g (1 1/4 cups) Dr Pepper, 24g BBQ seasoning, 15ml Worcestershire, 30g no-sugar ketchup, 3 chipotles</li>
+                    <li>Finishing Sauce: 40g honey, 25g apple cider vinegar, 10g Dijon, 30g ketchup, 120g (1/2 cup) Dr Pepper</li>
+                    <li>2000g sweet potatoes (~10 medium), Olive oil, salt</li>
+                    <li>Toppings: 200g cheddar, 400g 0% Greek yogurt, green onions</li>
+                </ul>
+                <h3>Instructions</h3>
+                <ol>
+                    <li>Slow cook beef with seasonings and 1 1/4 cups Dr Pepper (4-5 hrs High / 6-8 hrs Low).</li>
+                    <li>Mix finishing sauce ingredients in a bowl.</li>
+                    <li>Dice sweet potatoes. Roast at 400°F with oil and salt for 25-35 mins.</li>
+                    <li>Shred beef. Transfer liquid to a pan, add finishing sauce, and simmer 10 mins to reduce. Use cornstarch slurry if needed.</li>
+                    <li>Mix yogurt with a splash of milk and garlic powder.</li>
+                    <li>Assemble 10 bowls: sweet potatoes, beef, cheese, yogurt sauce, and green onions.</li>
+                </ol>
+            </section>
         </div>
 
-        <div id="cheesesteak" class="recipe-entry" data-name="Cheesesteak Pasta">
+        <div id="cheesesteak" class="recipe-entry">
             <script type="application/ld+json">
-            { "@context": "https://schema.org/", "@type": "Recipe", "name": "Cheesesteak Pasta", "recipeYield": "12", "nutrition": { "@type": "NutritionInformation", "calories": "520 kcal", "proteinContent": "48g" }, "recipeIngredient": ["1350g brisket", "Peppers", "Onions", "Cottage cheese", "Provolone", "Pasta"], "recipeInstructions": [{"@type": "HowToStep", "text": "Slow cook beef and roast peppers."}, {"@type": "HowToStep", "text": "Blend cheese sauce."}, {"@type": "HowToStep", "text": "Combine all and cook 20 mins."}] }
+            {
+              "@context": "https://schema.org/",
+              "@type": "Recipe",
+              "name": "Cheesesteak Pasta",
+              "recipeYield": "12",
+              "nutrition": { "@type": "NutritionInformation", "calories": "520 kcal", "proteinContent": "48g", "carbohydrateContent": "49g", "fatContent": "15g" },
+              "recipeIngredient": [
+                "1350g (48oz) flat cut brisket or chuck eye roast", "1 Tbsp each: Salt, pepper, garlic powder, and onion powder", "240g (8oz) beef bone broth", "4 red bell peppers", "4 poblanos", "4 jalapenos", "2 sweet onions", "800g 2% cottage cheese", "100g Parmigiano Reggiano", "150g provolone", "350ml 1% milk", "672g (24oz) pasta of choice (dry weight)", "Salt & pepper to taste"
+              ],
+              "recipeInstructions": [
+                { "@type": "HowToStep", "text": "Add beef, salt, pepper, garlic powder, onion powder, and beef bone broth to a slow cooker. Cook on high for 4-5 hours, or low for 5-6 hours." },
+                { "@type": "HowToStep", "text": "Dice bell peppers, poblanos, jalapenos, and sweet onions, and add to a sheet pan. Bake at 450 for 30-45 minutes, or until lightly browned." },
+                { "@type": "HowToStep", "text": "Once beef is done cooking, shred, then mix in roasted peppers and onions." },
+                { "@type": "HowToStep", "text": "Blend 2% cottage cheese, Parmigiano Reggiano, provolone, 1% milk and salt/pepper to taste until smooth." },
+                { "@type": "HowToStep", "text": "Cook pasta for half the time on the packaging instructions, drain." },
+                { "@type": "HowToStep", "text": "Add half-cooked pasta and the blended cheese sauce to the shredded beef and pepper mixture. Cover and let cook for 20-25 minutes until the pasta is finished cooking and the sauce is thickened." }
+              ]
+            }
             </script>
-            <section><h2>Cheesesteak Pasta</h2><p class="macros">520 Cal | 48g P</p></section>
+            <section>
+                <h2>Cheesesteak Pasta</h2>
+                <div class="macros">520 Cal | 48g Protein | 49g Carbs | 15g Fat</div>
+                <h3>Ingredients</h3>
+                <ul>
+                    <li>1350g (48oz) brisket or chuck eye roast</li>
+                    <li>1 Tbsp each: salt, pepper, garlic powder, onion powder</li>
+                    <li>240g (8oz) beef bone broth</li>
+                    <li>4 red bell peppers, 4 poblanos, 4 jalapenos, 2 sweet onions</li>
+                    <li>800g 2% cottage cheese, 100g Parmigiano Reggiano, 150g provolone, 350ml 1% milk</li>
+                    <li>672g (24oz) pasta (dry weight)</li>
+                </ul>
+                <h3>Instructions</h3>
+                <ol>
+                    <li>Slow cook beef with seasonings and broth (4-5 hrs High / 5-6 hrs Low).</li>
+                    <li>Dice all peppers and onions. Roast at 450°F for 30-45 mins.</li>
+                    <li>Shred beef and stir in roasted veggies.</li>
+                    <li>Blend cottage cheese, parmesan, provolone, milk, salt, and pepper until smooth.</li>
+                    <li>Boil pasta for exactly half the time on the box; drain.</li>
+                    <li>Mix pasta and cheese sauce into slow cooker. Cook for 20-25 mins until pasta is tender and sauce thickens.</li>
+                </ol>
+            </section>
         </div>
 
-        <div id="queso-chicken" class="recipe-entry" data-name="Queso Chicken & Rice">
+        <div id="queso-chicken" class="recipe-entry">
             <script type="application/ld+json">
-            { "@context": "https://schema.org/", "@type": "Recipe", "name": "Queso Chicken & Rice", "recipeYield": "5", "nutrition": { "@type": "NutritionInformation", "calories": "515 kcal", "proteinContent": "48g" }, "recipeIngredient": ["Chicken breast", "Taco seasoning", "Rice", "Greek yogurt", "Enchilada sauce", "Cheeses"], "recipeInstructions": [{"@type": "HowToStep", "text": "Cook rice and air fry chicken."}, {"@type": "HowToStep", "text": "Make queso sauce in pan."}, {"@type": "HowToStep", "text": "Combine and serve."}] }
+            {
+              "@context": "https://schema.org/",
+              "@type": "Recipe",
+              "name": "Queso Chicken & Rice",
+              "recipeYield": "5",
+              "nutrition": { "@type": "NutritionInformation", "calories": "515 kcal", "proteinContent": "48g", "carbohydrateContent": "51g", "fatContent": "13g" },
+              "recipeIngredient": [
+                "24oz chicken breast", "1.5 tsp avocado oil", "1.5 packets of taco seasoning", "300g basmati rice", "250g 2% Plain Greek yogurt", "85g red enchilada sauce", "85g pico de gallo", "85g cheddar cheese", "100g 1/3 fat cream cheese", "65g diced green chiles", "20g nutritional yeast", "10g brown sugar", "1/2 tsp garlic powder", "1/2 tsp onion powder", "Pinch of salt", "Chopped Cilantro"
+              ],
+              "recipeInstructions": [
+                { "@type": "HowToStep", "text": "Rinse rice in a mesh strainer under cold water for 2 minutes, then combine with 450g of water and bring to a boil. Once boiling, reduce heat to low, cover, and let cook for 15 minutes. Remove from heat, keep covered, and let sit another 10 minutes to cook rice." },
+                { "@type": "HowToStep", "text": "Tenderize chicken breasts (flatten out to an even thickness), rub with avocado oil, then cover with taco seasoning. It should be entirely covered. Place to the side and dry brine for 45-60 mins." },
+                { "@type": "HowToStep", "text": "Cook chicken in the air fryer at 375 for 12 minutes, let rest 5, then slice or dice." },
+                { "@type": "HowToStep", "text": "With heat on the lowest setting, add Greek yogurt, red enchilada sauce, pico, cheddar cheese, cream cheese, green chiles, nutritional yeast, brown sugar, garlic powder, onion powder and salt. Mix until everything is melted and combined (if it's still too thick, add a splash of milk until your desired consistency). Mix in a handful of chopped cilantro." },
+                { "@type": "HowToStep", "text": "Place chicken on top of rice and pour over your Queso sauce and garnish with more cilantro." }
+              ]
+            }
             </script>
-            <section><h2>Queso Chicken & Rice</h2><p class="macros">515 Cal | 48g P</p></section>
+            <section>
+                <h2>Queso Chicken & Rice</h2>
+                <div class="macros">515 Cal | 48g Protein | 51g Carbs | 13g Fat</div>
+                <h3>Ingredients</h3>
+                <ul>
+                    <li>24oz chicken breast, 1.5 tsp avocado oil, 1.5 packets taco seasoning</li>
+                    <li>300g basmati rice</li>
+                    <li>Queso Sauce: 250g 2% Greek yogurt, 85g red enchilada sauce, 85g pico, 85g cheddar, 100g 1/3 fat cream cheese, 65g green chiles</li>
+                    <li>Seasoning: 20g nutritional yeast, 10g brown sugar, 1/2 tsp garlic/onion powder, pinch of salt</li>
+                    <li>Chopped Cilantro</li>
+                </ul>
+                <h3>Instructions</h3>
+                <ol>
+                    <li>Rinse rice. Boil with 450g water, then simmer on low (covered) for 15 mins. Let sit (covered) for 10 mins.</li>
+                    <li>Flatten chicken. Rub with oil and coat heavily in taco seasoning. Dry brine for 45-60 mins.</li>
+                    <li>Air fry chicken at 375°F for 12 mins. Rest for 5 mins, then dice.</li>
+                    <li>In a pan on low: combine yogurt, enchilada sauce, pico, cheeses, chiles, and seasonings. Stir until melted (add milk if needed). Stir in cilantro.</li>
+                    <li>Serve chicken over rice, smothered in Queso sauce.</li>
+                </ol>
+            </section>
         </div>
 
-        <div id="breakfast-brisket" class="recipe-entry" data-name="Chipotle Brisket Breakfast Burritos">
+        <div id="breakfast-brisket" class="recipe-entry">
             <script type="application/ld+json">
-            { "@context": "https://schema.org/", "@type": "Recipe", "name": "Chipotle Brisket Breakfast Burritos", "recipeYield": "12", "nutrition": { "@type": "NutritionInformation", "calories": "505 kcal", "proteinContent": "48g" }, "recipeIngredient": ["Brisket", "Chipotes", "Eggs", "Cottage cheese", "Tortillas"], "recipeInstructions": [{"@type": "HowToStep", "text": "Slow cook beef."}, {"@type": "HowToStep", "text": "Bake egg/cheese sheets."}, {"@type": "HowToStep", "text": "Assemble and freeze burritos."}] }
+            {
+              "@context": "https://schema.org/",
+              "@type": "Recipe",
+              "name": "Chipotle Brisket Breakfast Burritos",
+              "recipeYield": "12",
+              "nutrition": { "@type": "NutritionInformation", "calories": "505 kcal", "proteinContent": "48g", "carbohydrateContent": "40g", "fatContent": "17g" },
+              "recipeIngredient": [
+                "1340g (48 oz) flat cut brisket", "200g (7 oz) can chipotle peppers", "200g (3/4 cup) red enchilada sauce", "40g (2 Tbsp) honey", "15g (1 Tbsp) apple cider vinegar", "1 Tbsp salt", "1 Tbsp garlic powder", "1 Tbsp onion powder", "2 tsp black pepper", "600g (2 ½ cups) egg whites", "5 whole eggs", "350g (1 ½ cups) 2% cottage cheese", "2 tsp corn starch", "100g (1 cup) cheddar cheese", "400g (1 2/3 cups) 0% Greek yogurt", "50g (3 Tbsp) hot sauce", "Salt, garlic powder, and pepper to taste", "12 large tortillas", "Cilantro"
+              ],
+              "recipeInstructions": [
+                { "@type": "HowToStep", "text": "Trim the flat cut brisket by removing all excess separable fat. Once trimmed, place the meat in the slow cooker. Add the chipotles, red enchilada sauce, honey, apple cider vinegar, salt, garlic powder, onion powder, and black pepper. Stir to coat the meat. Cover and cook on high for 4-5 hours or low for 5-6 hours, until the beef is tender and pulls apart easily." },
+                { "@type": "HowToStep", "text": "Remove the meat from the slow cooker and set aside. Transfer the liquid to a pan and boil over medium-high heat for 10-15 minutes to reduce. Stir in a cornstarch slurry (2 Tbsp cornstarch mixed with 2 Tbsp cold water) and cook until thickened. Shred the beef with two forks, return it to the pot with the thickened sauce, and mix." },
+                { "@type": "HowToStep", "text": "Pre-heat oven to 375 degrees (190°C). In a blender, combine egg whites, whole eggs, 2% cottage cheese, and corn starch. Blend until smooth and pour the mixture into a sheet pan. Shred the cheddar cheese, top the mixture, and bake for 20-30 minutes, or until the middle is firm. Let the baked eggs sit for 10 minutes, then slice into 12 equal-sized rectangles." },
+                { "@type": "HowToStep", "text": "Mix 0% Greek yogurt, hot sauce, salt, garlic powder, and pepper in a small bowl to make the sauce." },
+                { "@type": "HowToStep", "text": "To assemble, lay 12 tortillas flat, add a dollop of sauce, a rectangle of baked egg, and a portion of the beef. Garnish with chopped cilantro, wrap the burrito tightly. Serve and store leftovers in foil or a freezer-safe bag/container." }
+              ]
+            }
             </script>
-            <section><h2>Brisket Breakfast Burritos</h2><p class="macros">505 Cal | 48g P</p></section>
+            <section>
+                <h2>Chipotle Brisket Breakfast Burritos</h2>
+                <div class="macros">505 Cal | 48g Protein | 40g Carbs | 17g Fat</div>
+                <h3>Ingredients</h3>
+                <ul>
+                    <li>1340g (48 oz) brisket</li>
+                    <li>Slow Cooker Mix: 200g chipotles, 200g red enchilada sauce, 40g honey, 15g apple cider vinegar, 1 Tbsp each salt/garlic/onion powder, 2 tsp pepper</li>
+                    <li>Egg Base: 600g egg whites, 5 whole eggs, 350g cottage cheese, 2 tsp corn starch, 100g cheddar</li>
+                    <li>Yogurt Sauce: 400g 0% Greek yogurt, 50g hot sauce, seasonings</li>
+                    <li>12 large tortillas, Cilantro</li>
+                </ul>
+                <h3>Instructions</h3>
+                <ol>
+                    <li>Trim fat from brisket. Place in slow cooker with seasonings, chipotles, sauce, honey, and vinegar. Cook High 4-5 hrs / Low 5-6 hrs.</li>
+                    <li>Shred beef. Reduce liquid in a pan for 10-15 mins, thicken with cornstarch slurry (2 Tbsp cornstarch/water), and mix back into beef.</li>
+                    <li>Preheat oven to 375°F. Blend egg whites, eggs, cottage cheese, and corn starch. Pour into a sheet pan, top with cheddar, and bake 20-30 mins. Slice into 12 rectangles.</li>
+                    <li>Mix yogurt sauce ingredients in a bowl.</li>
+                    <li>Assemble: 12 tortillas + sauce + egg rectangle + beef. Garnish with cilantro and wrap.</li>
+                </ol>
+            </section>
         </div>
 
-        <div id="fajita-burrito" class="recipe-entry" data-name="Creamy Chicken Fajita Burrito">
+        <div id="fajita-burrito" class="recipe-entry">
             <script type="application/ld+json">
-            { "@context": "https://schema.org/", "@type": "Recipe", "name": "Creamy Chicken Fajita Burrito", "recipeYield": "10", "nutrition": { "@type": "NutritionInformation", "calories": "390 kcal", "proteinContent": "36g" }, "recipeIngredient": ["Chicken", "Peppers", "Onion", "Beans", "Yogurt", "Tortillas"], "recipeInstructions": [{"@type": "HowToStep", "text": "Roast peppers and air fry chicken."}, {"@type": "HowToStep", "text": "Assemble with beans and yogurt."}] }
+            {
+              "@context": "https://schema.org/",
+              "@type": "Recipe",
+              "name": "Creamy Chicken Fajita Burrito",
+              "recipeYield": "10",
+              "nutrition": { "@type": "NutritionInformation", "calories": "390 kcal", "proteinContent": "36g", "carbohydrateContent": "34g", "fatContent": "12g" },
+              "recipeIngredient": [
+                "32oz thin sliced chicken breast", "1/2 bunch of cilantro, finely chopped", "Juice of 1 lime", "1 tblspn avocado oil", "1 tblspn honey", "1 tblspn garlic powder", "1 tsp chili powder", "1 tsp paprika", "1 tsp cumin", "2 tsp coarse salt", "1/3 cup water", "4 bell peppers", "1 sweet onion", "Salt to taste", "220g 0% Greek yogurt", "1 tblspn chipotle hot sauce", "100g mozzarella", "300g refried ranchero beans (30g per burrito)", "10 burrito tortillas"
+              ],
+              "recipeInstructions": [
+                { "@type": "HowToStep", "text": "Mix 1/2 bunch finely chopped cilantro, juice of 1 lime, avocado oil, honey, garlic powder, chili powder, paprika, cumin, coarse salt, black pepper and water to a bowl and mix. Add chicken and marinate for at least 30 minutes" },
+                { "@type": "HowToStep", "text": "Dice bell peppers and a sweet onion, salt to taste. Add to a baking sheet, bake at 400 for 40 mins" },
+                { "@type": "HowToStep", "text": "Add chicken to an air fryer at 385 for 9 minutes, work in batches if needed" },
+                { "@type": "HowToStep", "text": "Chop cooked chicken, add roasted veggies, greek yogurt, chipotle hot sauce, mozzarella and mix" },
+                { "@type": "HowToStep", "text": "Grab 10 tortillas, spread 30g of refried beans on each (optional) - then evenly distribute the chicken fajita mixture across each tortilla and wrap the burrito into aluminum foil or parchment paper, then store in the freezer" }
+              ]
+            }
             </script>
-            <section><h2>Fajita Burrito</h2><p class="macros">390 Cal | 36g P</p></section>
+            <section>
+                <h2>Creamy Chicken Fajita Burrito</h2>
+                <div class="macros">390 Cal | 36g Protein | 34g Carbs | 12g Fat</div>
+                <h3>Ingredients</h3>
+                <ul>
+                    <li>32oz thin sliced chicken breast</li>
+                    <li>Marinade: 1/2 bunch cilantro, 1 lime (juice), 1 Tbsp oil, 1 Tbsp honey, 1 Tbsp garlic powder, 1 tsp chili powder, 1 tsp paprika, 1 tsp cumin, 2 tsp salt, 1/3 cup water</li>
+                    <li>4 bell peppers, 1 sweet onion, salt</li>
+                    <li>Mix-ins: 220g 0% Greek yogurt, 1 Tbsp chipotle hot sauce, 100g mozzarella</li>
+                    <li>10 tortillas & 300g refried ranchero beans</li>
+                </ul>
+                <h3>Instructions</h3>
+                <ol>
+                    <li>Combine marinade ingredients. Add chicken and marinate for 30+ mins.</li>
+                    <li>Dice peppers and onion. Roast at 400°F for 40 mins.</li>
+                    <li>Air fry chicken at 385°F for 9 mins.</li>
+                    <li>Dice chicken. Mix with roasted veggies, yogurt, hot sauce, and mozzarella.</li>
+                    <li>Spread 30g beans on each tortilla. Add chicken mix and wrap.</li>
+                </ol>
+            </section>
         </div>
 
-        <div id="pizza-bites" class="recipe-entry" data-name="Pepperoni Pizza Bagel Bites">
+        <div id="pizza-bites" class="recipe-entry">
             <script type="application/ld+json">
-            { "@context": "https://schema.org/", "@type": "Recipe", "name": "Pepperoni Pizza Bagel Bites", "recipeYield": "5", "nutrition": { "@type": "NutritionInformation", "calories": "515 kcal", "proteinContent": "30g" }, "recipeIngredient": ["English muffins", "Marinara", "Mozzarella", "Turkey pepperoni", "Hot honey"], "recipeInstructions": [{"@type": "HowToStep", "text": "Toast muffins, add toppings, and bake 5 mins."}] }
+            {
+              "@context": "https://schema.org/",
+              "@type": "Recipe",
+              "name": "Pepperoni Pizza Bagel Bites",
+              "recipeYield": "5",
+              "nutrition": { "@type": "NutritionInformation", "calories": "515 kcal", "proteinContent": "30g", "carbohydrateContent": "65g", "fatContent": "17g" },
+              "recipeIngredient": [
+                "10 English muffins", "400g Marinara", "50g 'umami' black garlic sauce", "33g parmigiano reggiano", "60g chopped hot peppers", "200g 2% Mozzarella", "60 slices turkey pepperoni", "33g hot honey", "Oregano and Basil"
+              ],
+              "recipeInstructions": [
+                { "@type": "HowToStep", "text": "Preheat your oven to 450°F" },
+                { "@type": "HowToStep", "text": "Split and lightly spray each half of the English muffins with oil spray, and place them on a baking sheet. Bake in the oven for approximately 5 minutes, or until crispy." },
+                { "@type": "HowToStep", "text": "Once the English muffins are done, remove them from the oven and add marinara sauce, diced peppers, shredded mozzarella cheese, and pepperoni slices to each half." },
+                { "@type": "HowToStep", "text": "Drizzle some hot honey over the top of each muffin half, and then place them back in the oven for another 5 minutes, or until the cheese is melted and bubbly." },
+                { "@type": "HowToStep", "text": "Remove them from the oven and top with freshly grated parmesan cheese, oregano, and basil. Each 'serving' is 4 pizzas." }
+              ]
+            }
             </script>
-            <section><h2>Pizza Bagel Bites</h2><p class="macros">515 Cal | 30g P</p></section>
+            <section>
+                <h2>Pepperoni Pizza Bagel Bites</h2>
+                <div class="macros">515 Cal | 30g Protein | 65g Carbs | 17g Fat</div>
+                <h3>Ingredients</h3>
+                <ul>
+                    <li>10 English muffins</li>
+                    <li>400g Marinara, 50g black garlic sauce, 33g parmigiano reggiano</li>
+                    <li>60g chopped hot peppers, 200g 2% Mozzarella, 60 slices turkey pepperoni</li>
+                    <li>33g hot honey, Oregano, Basil</li>
+                </ul>
+                <h3>Instructions</h3>
+                <ol>
+                    <li>Preheat oven to 450°F.</li>
+                    <li>Split muffins, spray with oil, and bake for 5 mins until crispy.</li>
+                    <li>Top each half with marinara, peppers, mozzarella, and pepperoni.</li>
+                    <li>Drizzle with hot honey and bake for another 5 mins until bubbly.</li>
+                    <li>Garnish with parmesan, oregano, and basil. (Serving size = 4 bites).</li>
+                </ol>
+            </section>
         </div>
 
-        <div id="burrito-bowls" class="recipe-entry" data-name="Chicken Burrito Bowls">
+        <div id="burrito-bowls" class="recipe-entry">
             <script type="application/ld+json">
-            { "@context": "https://schema.org/", "@type": "Recipe", "name": "Chicken Burrito Bowls", "recipeYield": "5", "nutrition": { "@type": "NutritionInformation", "calories": "505 kcal", "proteinContent": "45g" }, "recipeIngredient": ["Chicken thighs", "RightRice", "Avocado", "Pico de gallo", "Yogurt"], "recipeInstructions": [{"@type": "HowToStep", "text": "Air fry chicken and cook rice."}, {"@type": "HowToStep", "text": "Assemble with guac and pico."}] }
+            {
+              "@context": "https://schema.org/",
+              "@type": "Recipe",
+              "name": "Chicken Burrito Bowls",
+              "recipeYield": "5",
+              "nutrition": { "@type": "NutritionInformation", "calories": "505 kcal", "proteinContent": "45g", "carbohydrateContent": "44g", "fatContent": "16g" },
+              "recipeIngredient": [
+                "24oz skinless chicken thighs", "Salt, garlic, onion, smoked paprika, chili powder to taste", "300g Spanish RightRice", "200g Avocado", "Salt, pepper, garlic powder to taste", "50g green enchilada sauce", "5 Roma tomatoes, diced", "1 small white onion, diced", "Dash of salt, pepper & garlic powder", "Juice of 2 limes", "~1/2 cup fresh chopped cilantro", "1-2 small jalapeño peppers, diced", "200g Greek yogurt (40g each)", "Hot sauce"
+              ],
+              "recipeInstructions": [
+                { "@type": "HowToStep", "text": "Preheat your air fryer to 375°F" },
+                { "@type": "HowToStep", "text": "Season boneless, skinless chicken thighs with each seasoning listed. Air fry for 12-15 minutes" },
+                { "@type": "HowToStep", "text": "While the chicken is cooking, cook your Spanish RightRice (or any rice of choice). Make the homemade Pico de Gallo by combining diced Roma tomatoes, diced white onion, salt, pepper, garlic powder, juice of two limes, a handful of cilantro, and diced jalapenos in a bowl. In a separate bowl, mash an avocado with salt, pepper, garlic powder and green enchilada sauce until it reaches a guacamole-like consistency." },
+                { "@type": "HowToStep", "text": "Once the chicken is cooked, let rest for 5 minutes, then dice into small pieces. Divide the rice, chicken, Pico de Gallo, and avocado evenly into five meal prep containers." },
+                { "@type": "HowToStep", "text": "Top each bowl with a dollop of Greek yogurt and hot sauce." }
+              ]
+            }
             </script>
-            <section><h2>Chicken Burrito Bowls</h2><p class="macros">505 Cal | 45g P</p></section>
+            <section>
+                <h2>Chicken Burrito Bowls</h2>
+                <div class="macros">505 Cal | 45g Protein | 44g Carbs | 16g Fat</div>
+                <h3>Ingredients</h3>
+                <ul>
+                    <li>24oz skinless chicken thighs + seasonings (salt, garlic, onion, smoked paprika, chili powder)</li>
+                    <li>300g Spanish RightRice</li>
+                    <li>Guacamole: 200g Avocado, salt, pepper, garlic powder, 50g green enchilada sauce</li>
+                    <li>Pico: 5 Roma tomatoes, 1 white onion, lime juice (2), cilantro, 1-2 jalapeños, seasonings</li>
+                    <li>Toppings: 200g Greek yogurt, hot sauce</li>
+                </ul>
+                <h3>Instructions</h3>
+                <ol>
+                    <li>Preheat air fryer to 375°F. Season chicken and air fry for 12-15 mins.</li>
+                    <li>Cook rice according to package.</li>
+                    <li>Mix Pico ingredients in a bowl. In another bowl, mash avocado with seasonings and enchilada sauce for guac.</li>
+                    <li>Dice chicken after resting 5 mins.</li>
+                    <li>Assemble 5 bowls: rice, chicken, pico, and guac. Top with 40g yogurt and hot sauce.</li>
+                </ol>
+            </section>
         </div>
 
     </div>
@@ -110,23 +480,17 @@
         const selector = document.getElementById('selector');
 
         if (selectedId) {
-            // Find the chosen recipe
             const chosen = document.getElementById(selectedId);
-            
             if (chosen) {
-                // Hide the main menu
                 selector.classList.add('hidden');
-                
-                // CRITICAL: Physically remove all other recipes from the DOM
                 const allEntries = document.querySelectorAll('.recipe-entry');
                 allEntries.forEach(entry => {
                     if (entry.id !== selectedId) {
-                        entry.remove(); // This deletes it from the code so AnyList can't find it
+                        entry.remove(); 
                     }
                 });
             }
         } else {
-            // If no ID is selected, hide all recipes so the scraper sees nothing until you pick one
             container.classList.add('hidden');
         }
     </script>
